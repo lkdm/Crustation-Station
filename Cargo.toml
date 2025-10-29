@@ -3,6 +3,11 @@ name = "cs-app"
 version = "0.1.0"
 edition = "2024"
 
+[profile.release]
+opt-level = 'z'
+codegen-units = 1
+lto = true
+
 [dependencies]
 leptos = { version = "0.8.12", features = ["csr"] }
 
