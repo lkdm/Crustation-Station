@@ -1,8 +1,10 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn DetailView() -> impl IntoView {
+pub fn DetailView(children: Children) -> impl IntoView {
     view! {
-        "Detail"
+        <section class="p-6">
+            {children()}
+        </section>
     }
 }
