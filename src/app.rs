@@ -2,7 +2,10 @@ mod detail;
 mod layout;
 mod list;
 
-use crate::app::{detail::DetailView, layout::Layout, list::ListView};
+use crate::{
+    app::{detail::DetailView, layout::Layout, list::ListView},
+    features::{json::JsonParserFormatter, uuid::UUIDGeneratorEncoder},
+};
 use leptos::prelude::*;
 use leptos_router::{
     components::{Route, Router, Routes},
@@ -29,26 +32,15 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Router>
-            <Layout sidebar=move || view! { <ListView/> }>
+            <Layout sidebar=ListView>
                 <Routes fallback=|| "Not found">
-                    <Route path=path!("/") view=move || view! { <DetailView><MyCalculator1/></DetailView> } />
-                    <Route path=path!("/another") view=move || view! { <DetailView><AnotherTool/></DetailView> } />
+                    // Because each view is behind a closure, they are lazy-created when the route
+                    // is active.
+                    <Route path=path!("/") view=move || view! { <DetailView><JsonParserFormatter/></DetailView> } />
+                    <Route path=path!("/json") view=move || view! { <DetailView><JsonParserFormatter/></DetailView> } />
+                    <Route path=path!("/uuid") view=move || view! { <DetailView><UUIDGeneratorEncoder/></DetailView> } />
                 </Routes>
             </Layout>
         </Router>
-    }
-}
-
-#[component]
-pub fn MyCalculator1() -> impl IntoView {
-    view! {
-        "MyCalculator1"
-    }
-}
-
-#[component]
-pub fn AnotherTool() -> impl IntoView {
-    view! {
-        "AnotherTool"
     }
 }
