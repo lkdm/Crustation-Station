@@ -13,6 +13,7 @@ use leptos_router::{
 };
 
 /// TODO: Implement IndexedDB storage for AppState
+#[derive(Clone)]
 pub struct AppState {
     pub dark_mode: RwSignal<bool>,
 }
