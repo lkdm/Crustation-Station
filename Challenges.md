@@ -12,6 +12,11 @@ Some challenges I have had with this project
     - Attempt 2: Remove `h-full`
     - Solution: Removed classes until I found the culprit- process of
       elimination. Needed to add `min-w-0` to. Similar to running `git bisect`
+  - [Conversion of derived signal to ReadSignal](https://github.com/leptos-rs/leptos/discussions/4421)
+    - Asked Github Discussion
+    - [Found section in documentation regarding `into` Props](https://book.leptos.dev/view/03_components.html#into-props)
+    - Realised they use `Signal<T>` instead of `ReadSignal<T>`
+    - Turned copy button into reusable component
 
 Other problems I solved;
 
