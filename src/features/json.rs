@@ -4,6 +4,7 @@ use leptos_shadcn_button::Button;
 use leptos_shadcn_textarea::Textarea;
 use serde_json::{Value, to_string_pretty};
 
+// Copy this in to test:
 // {"foo":"bar","baz":["qux"]}
 
 const EXAMPLE_JSON: &str = &"{\"foo\":\"bar\",\"baz\":[\"qux\"]}";
