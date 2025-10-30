@@ -41,13 +41,28 @@ pub fn JsonParserFormatter() -> impl IntoView {
         }
     });
 
+    // TODO: Move with Copy button into its own component
+    // This Tailwind Button component is broken.
+    // When the disabled attribute is enabled it puts`disabled=""` into the HTML element.
+    // The problem is that this does not work with the CSS disabled attributes.
+    // So our solution is to manually set new classes.
+    // TODO: Show that the button has been pressed
+    let is_error = Memo::new(move |_| result.get().is_err());
+    let button_class = Memo::new(move |_| {
+        if is_error.get() {
+            "bg-secondary text-muted-foreground cursor-not-allowed".to_string()
+        } else {
+            "".to_string()
+        }
+    });
+
     view! {
         <div class="flex flex-row gap-4 h-full">
             <Title text="JSON Parser and Formatter"/>
             // Input textarea
             <feature-input class="flex-1 h-full">
                 <Textarea
-                    class=Some("h-full w-full resize-none".to_string())
+                    class=Some("h-full w-full resize-none font-mono".to_string())
                     value=Some(input.get())
                     on_change=Callback::new(move |val: String| {
                         set_form_touched.set(true);
@@ -60,6 +75,8 @@ pub fn JsonParserFormatter() -> impl IntoView {
             <feature-result class="flex flex-col flex-1 h-full w-full gap-4">
                 <feature-toolbar>
                     <Button
+                        class=button_class
+                        disabled=is_error
                         on_click=Callback::new(move |_| {
                             match result.get() {
                                 Ok(val) => {
@@ -76,7 +93,7 @@ pub fn JsonParserFormatter() -> impl IntoView {
                         "Copy"
                     </Button>
                 </feature-toolbar>
-                <pre class="h-full w-full font-mono text-xs flex-1 border border-border rounded-md overflow-auto p-4 bg-secondary text-secondary-foreground">
+                <pre class="h-full w-full font-mono text-sm flex-1 border border-border rounded-md overflow-auto p-4 bg-secondary text-secondary-foreground">
                     {move || match result.get() {
                         Ok(val) => val.clone(),
                         Err(err) => err,

@@ -1,7 +1,7 @@
 MVP
 
-- [ ] Styling: UI look and feel
-- [ ] Branding
+- [x] Styling: UI look and feel
+- [x] Branding
 - [ ] Sidebar footer (send feedback email, version/build)
 - [ ] Detail view layout
 - [ ] Components library: form, input, buttons
