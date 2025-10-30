@@ -314,6 +314,7 @@ dependencies = [
  "leptos_meta",
  "leptos_router",
  "serde_json",
+ "web-sys",
 ]
 
 [[package]]
