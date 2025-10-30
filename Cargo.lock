@@ -302,6 +302,7 @@ version = "0.1.0"
 dependencies = [
  "gloo-console",
  "gloo-storage",
+ "gloo-timers",
  "leptos",
  "leptos-shadcn-button",
  "leptos-shadcn-checkbox",

@@ -1,4 +1,4 @@
-use leptos::prelude::*;
+use leptos::{prelude::*, reactive::spawn_local};
 use leptos_meta::Title;
 use leptos_shadcn_button::Button;
 use leptos_shadcn_textarea::Textarea;
@@ -19,6 +19,7 @@ const EXAMPLE_RESULT: &str = r#"{
 pub fn JsonParserFormatter() -> impl IntoView {
     let (input, set_input) = signal(String::new());
     let (result, set_result) = signal::<Result<String, String>>(Ok(EXAMPLE_RESULT.to_string()));
+    let (result_copied, set_result_copied) = signal(false);
     let (form_touched, set_form_touched) = signal(false);
 
     Effect::new(move |_| {
@@ -31,6 +32,8 @@ pub fn JsonParserFormatter() -> impl IntoView {
             // But if the user has touched the form, and it's empty, change the result to nothing
             return set_result.set(Ok(String::new()));
         }
+        set_result_copied.set(false);
+
         let parsed: Result<Value, serde_json::Error> = serde_json::from_str(&text);
         match parsed {
             Ok(val) => {
@@ -51,9 +54,9 @@ pub fn JsonParserFormatter() -> impl IntoView {
     let is_error = Memo::new(move |_| result.get().is_err());
     let button_class = Memo::new(move |_| {
         if is_error.get() {
-            "bg-secondary text-muted-foreground cursor-not-allowed".to_string()
+            "w-24 bg-secondary text-muted-foreground cursor-not-allowed".to_string()
         } else {
-            "".to_string()
+            "w-24".to_string()
         }
     });
 
@@ -86,12 +89,15 @@ pub fn JsonParserFormatter() -> impl IntoView {
                                     let navigator = window.navigator();
                                     let clipboard = navigator.clipboard();
                                     let _ = clipboard.write_text(&val);
+
+                                    // Handles setting the label briefly
+                                    set_result_copied.set(true)
                                 }
                                 Err(_) => {}
                             }
                         })
                     >
-                        "Copy"
+                        {move || if result_copied.get() { view! { "Copied!"} } else { view! { "Copy" } }}
                     </Button>
                 </feature-toolbar>
                 <pre class="h-full w-full font-mono text-sm flex-1 border border-border rounded-md overflow-auto p-4 bg-secondary text-secondary-foreground">
