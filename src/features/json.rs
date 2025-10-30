@@ -5,7 +5,7 @@ use leptos_shadcn_label::Label;
 use leptos_shadcn_textarea::Textarea;
 use serde_json::{Value, to_string_pretty};
 
-use crate::components::{copy_button::CopyButton, toolbar::Toolbar};
+use crate::components::{code_result::CodeResult, copy_button::CopyButton, toolbar::Toolbar};
 
 // Copy this in to test:
 // {"foo":"bar","baz":["qux"]}
@@ -77,12 +77,7 @@ pub fn JsonParserFormatter() -> impl IntoView {
                         text_to_copy=Signal::derive(move || result.get().unwrap_or("".to_string()))
                     />
                 </Toolbar>
-                <pre class="h-full w-full font-mono text-sm flex-1 border border-border rounded-md overflow-auto p-4 bg-secondary text-secondary-foreground">
-                    {move || match result.get() {
-                        Ok(val) => val.clone(),
-                        Err(err) => err,
-                    }}
-                </pre>
+                <CodeResult result=result />
             </feature-result>
         </div>
     }
