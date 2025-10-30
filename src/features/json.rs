@@ -7,7 +7,7 @@ pub fn JsonParserFormatter() -> impl IntoView {
     let (result, set_result) = signal::<Result<String, Vec<String>>>(Ok(String::new()));
 
     view! {
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-row gap-2">
             // Input textarea
             <app-input class="flex-1">
                 <Textarea
