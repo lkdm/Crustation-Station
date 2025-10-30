@@ -16,4 +16,5 @@ install: ## Install dependencies
 
 run: ## Develop the application
 	@echo "Running the app"
-	trunk serve --port 30400 --open
+	@tailwindcss -i ./src/index.css -o ./dist/output.css --watch &
+	@trunk serve --port 30400 --open
