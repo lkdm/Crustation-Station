@@ -76,7 +76,7 @@ pub fn JsonParserFormatter() -> impl IntoView {
                 />
             </feature-input>
             // Result area
-            <feature-result class="flex flex-col flex-1 h-full w-full gap-4">
+            <feature-result class="flex flex-col flex-1 h-full w-full gap-4 min-w-0">
                 <feature-toolbar>
                     <Button
                         class=button_class
