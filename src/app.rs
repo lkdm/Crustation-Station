@@ -1,9 +1,10 @@
 mod detail;
 mod layout;
 mod list;
+pub mod state;
 
 use crate::{
-    app::{detail::DetailView, layout::Layout, list::ListView},
+    app::{detail::DetailView, layout::Layout, list::ListView, state::AppState},
     features::{json::JsonParserFormatter, uuid::UUIDGeneratorEncoder},
 };
 use leptos::prelude::*;
@@ -11,20 +12,6 @@ use leptos_router::{
     components::{Route, Router, Routes},
     path,
 };
-
-/// TODO: Implement IndexedDB storage for AppState
-#[derive(Clone)]
-pub struct AppState {
-    pub dark_mode: RwSignal<bool>,
-}
-
-impl AppState {
-    fn new() -> Self {
-        Self {
-            dark_mode: RwSignal::new(false),
-        }
-    }
-}
 
 #[component]
 pub fn App() -> impl IntoView {
