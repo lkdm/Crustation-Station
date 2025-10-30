@@ -5,6 +5,8 @@ use leptos::prelude::*;
 pub fn Layout(sidebar: impl IntoView, children: Children) -> impl IntoView {
     let state: AppState = use_context().expect("AppState not found");
 
+    // TODO: Use the <Html/> component instead of an effect
+    // https://book.leptos.dev/metadata.html
     Effect::new(move |_| {
         let dark = state.dark_mode.get();
 

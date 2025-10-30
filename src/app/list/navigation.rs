@@ -24,10 +24,12 @@ pub fn Navigation() -> impl IntoView {
         <ul class="flex flex-col gap-1 p-2">
             {items.into_iter()
                 .map(|item| view! {
-                    <A href=item.href>
-                        <li class="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary transition-colors">
-                            {item.title}
-                        </li>
+                    <A
+                        href=item.href
+                        // TODO: I can't get :active to work with <A/> for some reason?
+                        attr:class="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+                    >
+                        {item.title}
                     </A>
                 }).collect_view()}
         </ul>
