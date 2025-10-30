@@ -27,7 +27,7 @@ pub fn Navigation() -> impl IntoView {
                     <A
                         href=item.href
                         // TODO: I can't get :active to work with <A/> for some reason?
-                        attr:class="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+                        attr:class="block rounded-md px-3 py-2 text-sm text-foreground hover:bg-secondary transition-colors"
                     >
                         {item.title}
                     </A>
