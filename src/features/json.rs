@@ -26,9 +26,9 @@ pub fn JsonParserFormatter() -> impl IntoView {
     });
 
     view! {
-        <div class="flex flex-row gap-2">
+        <div class="flex flex-row gap-2 h-full">
             // Input textarea
-            <app-input class="flex-1">
+            <app-input class="flex-1 h-full">
                 <Textarea
                     class=Some("h-full w-full".to_string())
                     value=Some(input.get())
@@ -36,7 +36,7 @@ pub fn JsonParserFormatter() -> impl IntoView {
                 />
             </app-input>
             // Result area
-            <app-result class="flex-1">
+            <app-result class="flex-1 h-full">
                 <pre class="h-full w-full">
                     {move || match result.get() {
                         Ok(val) => val.clone(),
