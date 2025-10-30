@@ -3,11 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #f9f9f9;
-  --color-text: #111827;
+  --background: 240 20% 97%; /* light beige paper */
+  --foreground: 30 10% 15%; /* deep charcoal-brown text */
+
+  --card: 40 15% 92%; /* soft beige surface */
+  --card-foreground: 30 10% 15%; /* matching text tone */
+
+  --border: 40 10% 80%; /* light warm gray */
+  --input: 40 10% 80%;
+
+  --primary: 35 25% 35%; /* muted brown-olive */
+  --primary-foreground: 45 30% 90%; /* soft cream */
+
+  --accent: 35 30% 45%; /* soft earthy highlight */
+  --accent-foreground: 45 40% 95%;
+
+  --muted: 40 10% 85%;
+  --muted-foreground: 30 10% 35%;
+
+  --ring: 35 25% 35%;
 }
 
 .dark {
-  --color-bg: #121212;
-  --color-text: #e5e5e5;
+  --background: 30 10% 10%; /* soil black-brown */
+  --foreground: 45 30% 90%; /* soft cream text */
+
+  --card: 30 10% 14%; /* slightly lighter surface */
+  --card-foreground: 45 30% 90%;
+
+  --border: 30 8% 25%; /* soft dark gray */
+  --input: 30 8% 25%;
+
+  --primary: 40 25% 55%; /* warm tan highlight */
+  --primary-foreground: 30 10% 10%;
+
+  --accent: 45 25% 65%; /* soft clay tone */
+  --accent-foreground: 30 10% 10%;
+
+  --muted: 30 10% 25%;
+  --muted-foreground: 45 25% 75%;
+
+  --ring: 40 25% 55%;
 }

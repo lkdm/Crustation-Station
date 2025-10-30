@@ -19,12 +19,12 @@ pub fn Layout(sidebar: impl IntoView, children: Children) -> impl IntoView {
     });
 
     view! {
-        <div class="bg-background text-text transition-colors flex flex-col md:flex-row h-screen">
+        <div class="bg-background text-foreground transition-colors duration-500 flex flex-col md:flex-row h-screen">
             <aside class="w-full md:w-60 h-20 md:h-full overflow-y-auto">
                 {sidebar.into_view()}
             </aside>
 
-            <main class="flex-1 p-4 overflow-auto">
+            <main class="flex-1 p-4 overflow-auto h-full">
                 {children()}
             </main>
         </div>
