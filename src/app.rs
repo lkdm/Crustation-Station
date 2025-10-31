@@ -8,6 +8,7 @@ use crate::{
     features::{json::JsonParserFormatter, uuid::UUIDGeneratorEncoder},
 };
 use leptos::prelude::*;
+use leptos_meta::Title;
 use leptos_router::{
     components::{Route, Router, Routes},
     path,
@@ -18,8 +19,11 @@ pub fn App() -> impl IntoView {
     let state = AppState::new();
     provide_context(state);
 
+    let formatter = |text| format!("{text} — Crustacean Station");
+
     view! {
         <Router>
+            <Title formatter/>
             <Layout sidebar=ListView>
                 <Routes fallback=|| "Not found">
                     // Because each view is behind a closure, they are lazy-created when the route

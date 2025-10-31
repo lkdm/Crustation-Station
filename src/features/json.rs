@@ -1,6 +1,4 @@
-use leptos::{prelude::*, reactive::spawn_local};
-use leptos_meta::Title;
-use leptos_shadcn_button::Button;
+use leptos::{prelude::*};
 use leptos_shadcn_label::Label;
 use leptos_shadcn_textarea::Textarea;
 use serde_json::{Value, to_string_pretty};
@@ -48,7 +46,6 @@ pub fn JsonParserFormatter() -> impl IntoView {
 
     view! {
         <div class="flex flex-row gap-x-4 h-full">
-            <Title text="JSON Parser and Formatter"/>
             // Input textarea
             <feature-input class="flex-1 flex flex-col h-full">
                 <Toolbar>
