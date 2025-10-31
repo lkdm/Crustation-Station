@@ -22,9 +22,5 @@ Other problems I solved;
 
 I'm still working on;
 
-- Because JS promises don't automatically map to Rust Futures, I need to
-  manually convert it. Trying to figure out how to asyncronously set a timer.
-- Trying to find a generalised way to make a `signal()` load from LocalStorage
-  on page load, and save to it reactively.
 - Want to pass a RSX component to a struct, so I can unify routes and list items
   under a single vector.
