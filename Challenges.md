@@ -25,6 +25,11 @@ Some challenges I have had with this project
   cared about; the styling, and created a spread attribute.
 - I then applied that to a HTML <textarea /> and used that.
 
+### Caveat: I don't think this works well with reactive arguments/props
+
+[I asked a question on the Leptos Discussion
+board](https://github.com/leptos-rs/leptos/discussions/4423)
+
 ---
 
 Other problems I solved;

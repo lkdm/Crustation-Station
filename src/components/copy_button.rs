@@ -1,7 +1,9 @@
 use gloo_timers::future::TimeoutFuture;
 use leptos::prelude::*;
-use leptos_shadcn_button::Button;
+use leptos_shadcn_button::{Button, ButtonSize};
 use wasm_bindgen_futures::spawn_local;
+
+use crate::components::form::button_attrs;
 
 /// CopyButton
 ///
@@ -43,12 +45,14 @@ pub fn CopyButton(
     };
 
     view! {
-        <Button
-            class=button_class
+        <button
+            {..button_attrs(move || button_class.get().into())}
             disabled=disabled
-            on_click=on_click
+            on:click=move |_| on_click()
         >
             {move || if copied.get() { view! { "Copied!" } } else { view! { "Copy" } }}
-        </Button>
+        </button>
     }
 }
+
+// on:click=move |_| setter.update(|value| *value = !*value)

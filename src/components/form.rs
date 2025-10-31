@@ -12,3 +12,11 @@ pub fn textarea_attrs(extra_classes: &str) -> impl Attribute {
         <{..} class=full_class />
     }
 }
+
+pub const BUTTON_CLASS: &str = "h-9 rounded-md px-3 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+pub fn button_attrs(extra_classes: impl Fn() -> String + 'static) -> impl Attribute {
+    move || {
+        let full_class = format!("{} {}", extra_classes(), BUTTON_CLASS);
+        view! { <div class=full_class /> } // placeholder element
+    }
+}
