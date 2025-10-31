@@ -6,6 +6,7 @@ MVP
 - [x] Detail view layout
 - [ ] Components library: form, input, buttons
 - [ ] Copy button
+- [ ] Stop relying on Shadcn components
 
 Stretch goals
 
@@ -15,9 +16,9 @@ Stretch goals
 
 Apps
 
-- [ ] JSON parse/prettify
+- [x] JSON parse/prettify
 - [ ] Base64 encoder
-- [ ] UUID/ULID generator/decode
+- [x] UUID/ULID generator/decode
 - [ ] URL encoder/decoder
 - [ ] Epoch/timestamp converter
 - [ ] Backslash escape/unescape

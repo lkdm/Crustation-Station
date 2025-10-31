@@ -27,4 +27,12 @@ leptos_router = "0.8.9"
 serde_json = "1.0.145"
 wasm-bindgen-futures = "0.4.55"
 web-sys = { version = "0.3.82", features = ["Window", "Navigator", "Clipboard"]}
+strum = { version = "0.27", features = ["derive"] }
 
+[dependencies.uuid]
+version = "1.18.1"
+features = [
+    "v4",
+    "v7",
+    "js",
+]

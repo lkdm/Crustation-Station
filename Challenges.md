@@ -18,6 +18,15 @@ Some challenges I have had with this project
     - Realised they use `Signal<T>` instead of `ReadSignal<T>`
     - Turned copy button into reusable component
 
+## Shadcn Textarea component not reactive
+
+- The Shadcn Textarea component was not reactive
+- Low on time, instead of making my own component, I took the part I actually
+  cared about; the styling, and created a spread attribute.
+- I then applied that to a HTML <textarea /> and used that.
+
+---
+
 Other problems I solved;
 
 I'm still working on;
