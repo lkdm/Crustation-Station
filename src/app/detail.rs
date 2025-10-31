@@ -1,10 +1,16 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn DetailView(children: Children) -> impl IntoView {
+pub fn DetailView(
+    title: String,
+    children: Children
+) -> impl IntoView {
     view! {
         <>
-            {children()}
+            <h1>{title}</h1>
+            <div style="height: calc(100vh - 64px)">
+                {children()}
+            </div>
         </>
     }
 }

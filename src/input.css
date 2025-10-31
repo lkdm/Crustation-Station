@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 :root {
   --background: 240 20% 97%; /* light beige paper */
   --foreground: 30 10% 15%; /* deep charcoal-brown text */

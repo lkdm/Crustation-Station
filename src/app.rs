@@ -24,9 +24,9 @@ pub fn App() -> impl IntoView {
                 <Routes fallback=|| "Not found">
                     // Because each view is behind a closure, they are lazy-created when the route
                     // is active.
-                    <Route path=path!("/") view=move || view! { <DetailView><JsonParserFormatter/></DetailView> } />
-                    <Route path=path!("/json") view=move || view! { <DetailView><JsonParserFormatter/></DetailView> } />
-                    <Route path=path!("/uuid") view=move || view! { <DetailView><UUIDGeneratorEncoder/></DetailView> } />
+                    <Route path=path!("/") view=move || view! { <DetailView title="Json Parser and Formatter".to_string()><JsonParserFormatter/></DetailView> } />
+                    <Route path=path!("/json") view=move || view! { <DetailView title="Json Parser and Formatter".to_string()><JsonParserFormatter/></DetailView> } />
+                    <Route path=path!("/uuid") view=move || view! { <DetailView title="UUID/ULID Generator and Encoder".to_string()><UUIDGeneratorEncoder/></DetailView> } />
                 </Routes>
             </Layout>
         </Router>
