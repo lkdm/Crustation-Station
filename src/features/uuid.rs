@@ -49,12 +49,17 @@ pub fn UUIDGeneratorEncoder() -> impl IntoView {
     let handle_generate_ids = {
         let kind = kind.clone();
         let number = number.clone();
+        let lowercase = lowercase.clone();
         move || {
             let n = number.get();
             let k = kind.get();
-            match generate(n, k) {
-                Ok(uuids) => set_result.set(Ok(uuids.join("\n"))),
-                Err(err) => set_result.set(Err(err)),
+            let l = lowercase.get();
+            match (generate(n, k), l) {
+                // By default it outputs lower case
+                (Ok(uuids), true) => set_result.set(Ok(uuids.join("\n"))),
+                // To uppercase
+                (Ok(uuids), false) => set_result.set(Ok(uuids.join("\n").to_uppercase())),
+                (Err(err), _) => set_result.set(Err(err)),
             }
         }
     };
