@@ -5,14 +5,16 @@ MVP
 - [ ] Sidebar footer (send feedback email, version/build)
 - [x] Detail view layout
 - [ ] Components library: form, input, buttons
-- [ ] Copy button
+- [x] Copy button
 - [ ] Stop relying on Shadcn components
+- [ ] Hover, active effects on buttons
 
 Stretch goals
 
-- [ ] IndexedDB for AppState
+- [ ] Icons for each feature
 - [ ] Smart detection based on clipboard (is this possible?)
 - [ ] Offline web-service worker
+- [ ] Responsive layout
 
 Apps
 
