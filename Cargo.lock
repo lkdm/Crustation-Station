@@ -309,10 +309,7 @@ dependencies = [
  "leptos-shadcn-combobox",
  "leptos-shadcn-input",
  "leptos-shadcn-label",
- "leptos-shadcn-select",
- "leptos-shadcn-switch",
  "leptos-shadcn-textarea",
- "leptos-shadcn-tooltip",
  "leptos_meta",
  "leptos_router",
  "serde_json",
@@ -724,13 +721,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e8714ae4adeaa846d838f380fbd72f049197de629948f91bf045329e0cf0a283"
 dependencies = [
  "futures",
- "js-sys",
  "once_cell",
  "or_poisoned",
  "pin-project-lite",
  "serde",
  "throw_error",
- "wasm-bindgen",
 ]
 
 [[package]]
@@ -880,15 +875,6 @@ name = "interpolator"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "71dd52191aae121e8611f1e8dc3e324dd0dd1dee1e6dd91d10ee07a3cfb4d9d8"
-
-[[package]]
-name = "inventory"
-version = "0.3.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc61209c082fbeb19919bee74b176221b27223e27b65d781eb91af24eb1fb46e"
-dependencies = [
- "rustversion",
-]
 
 [[package]]
 name = "itertools"
@@ -1043,21 +1029,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "leptos-shadcn-select"
-version = "0.9.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2d0bbb2175e5b80024bceec73da26534359943983e19074d98861250b638bc5"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
- "web-sys",
-]
-
-[[package]]
 name = "leptos-shadcn-signal-management"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1072,40 +1043,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "leptos-shadcn-switch"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "924cedb4e46892ad26271ddfca451c82abf5d5ec152fb2386eed74bc203b505f"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
- "web-sys",
-]
-
-[[package]]
 name = "leptos-shadcn-textarea"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ea8b726961daf853f96c256fac3a2ea4c8c74d5167c0048369034b7dcd1d9146"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-tooltip"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c382a30c41c245b7ba8b1de8ebcfce4c9ba5c595ba88d1afcf00972022157c61"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1842,7 +1783,6 @@ dependencies = [
  "futures",
  "gloo-net",
  "http",
- "inventory",
  "js-sys",
  "pin-project-lite",
  "rustc_version",

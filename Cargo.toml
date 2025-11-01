@@ -3,10 +3,13 @@ name = "cs-app"
 version = "0.1.0"
 edition = "2024"
 
-[profile.release]
+[profile.wasm-release]
+inherits = "release"
 opt-level = 'z'
-codegen-units = 1
 lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
 
 [dependencies]
 gloo-console = "0.3.0"
@@ -18,10 +21,7 @@ leptos-shadcn-checkbox = "0.9.0"
 leptos-shadcn-combobox = "0.9.0"
 leptos-shadcn-input = "0.9.0"
 leptos-shadcn-label = "0.9.0"
-leptos-shadcn-select = "0.9.1"
-leptos-shadcn-switch = "0.9.0"
 leptos-shadcn-textarea = "0.9.0"
-leptos-shadcn-tooltip = "0.9.0"
 leptos_meta = "0.8.5"
 leptos_router = "0.8.9"
 serde_json = "1.0.145"
@@ -36,3 +36,6 @@ features = [
     "v7",
     "js",
 ]
+
+[package.metadata.leptos]
+lib-profile-release = "wasm-release"
