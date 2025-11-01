@@ -17,7 +17,7 @@ use leptos_router::{
 pub fn base_route() -> &'static str {
     #[cfg(debug_assertions)]
     {
-        "/"
+        ""
     }
 
     #[cfg(not(debug_assertions))]
