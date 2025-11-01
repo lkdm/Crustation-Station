@@ -4,7 +4,7 @@ use leptos::prelude::*;
 use leptos_router::components::A;
 use leptos_shadcn_button::Button;
 
-use crate::app::{AppState, list::navigation::Navigation};
+use crate::app::{AppState, list::navigation::Navigation, route};
 
 #[component]
 pub fn ListView() -> impl IntoView {
@@ -24,7 +24,7 @@ pub fn ListView() -> impl IntoView {
 #[component]
 pub fn Branding() -> impl IntoView {
     view! {
-        <A href="/">
+        <A href=route("/")>
             <div class="flex flex-row gap-2 pl-4 pr-4 pt-2 pb-2 border-b border-border bg-card items-center text-primary">
                 <span class="flex-none">"🦀"</span>
                 <span class="flex-1 text-base font-semibold">"Crustacean Station"</span>

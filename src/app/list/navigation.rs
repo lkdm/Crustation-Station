@@ -1,10 +1,12 @@
 use leptos::prelude::*;
 use leptos_router::components::A;
 
+use crate::app::route;
+
 #[derive(Clone)]
 struct NavItem {
     title: &'static str,
-    href: &'static str,
+    href: String,
 }
 
 #[component]
@@ -12,11 +14,11 @@ pub fn Navigation() -> impl IntoView {
     let items = vec![
         NavItem {
             title: "JSON Formatter",
-            href: "/json",
+            href: route("json"),
         },
         NavItem {
             title: "UUID / ULID Tool",
-            href: "/uuid",
+            href: route("uuid"),
         },
     ];
 
