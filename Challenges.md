@@ -25,6 +25,25 @@ Some challenges I have had with this project
   cared about; the styling, and created a spread attribute.
 - I then applied that to a HTML <textarea /> and used that.
 
+## Routing not working on Github Pages
+
+- Needed to write my own function to change the base url, depending on compile
+  environment.
+- Needed to add Github Action to copy index.html to 404.html to let Leptos
+  router handle routing on any page.
+  - Even submitted a PR so that Leptos can update their documentation.
+
+Process I went through:
+
+1. Read documentation
+2. Search for relevant threads
+3. Ask LLM (usually useless)
+4. Ask Github Discussion and/or relevant Discord
+5. If I believe the solution can help other people and it is relevant to the
+   documentation, I will submit a PR.
+6. If I believe the solution can help other people but is not relevant to the
+   documentation, I will write a blog post.
+
 ---
 
 Other problems I solved;
