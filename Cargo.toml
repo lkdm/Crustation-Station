@@ -12,7 +12,6 @@ panic = "abort"
 strip = true
 
 [dependencies]
-gloo-console = "0.3.0"
 gloo-storage = "0.3.0"
 gloo-timers = { version = "0.3.0", features = ["futures"] }
 leptos = { version = "0.8.12", features = ["csr"] }
@@ -33,7 +32,6 @@ strum = { version = "0.27", features = ["derive"] }
 version = "1.18.1"
 features = [
     "v4",
-    "v7",
     "js",
 ]
 

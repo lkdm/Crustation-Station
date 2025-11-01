@@ -44,6 +44,11 @@ Process I went through:
 6. If I believe the solution can help other people but is not relevant to the
    documentation, I will write a blog post.
 
+## Bundle size is large
+
+- [ ] Generate UUID v4 manually
+- [ ] Generate Uuid v7 manually [https://www.ietf.org/rfc/rfc9562.html](https://www.ietf.org/rfc/rfc9562.html)
+
 ---
 
 Other problems I solved;
